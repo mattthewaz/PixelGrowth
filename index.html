@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="pixel.css">
+		<script>
+			var require = {
+				baseUrl: "scripts",
+				deps: ["pg"]
+			};
+		</script>
+		<script src="scripts/require.js"></script>
+	</head>
+	<body>
+		<div id="gamearea">
+			<div id="pixelframe">
+				<canvas id="pixelcanvas"></canvas>
+			</div>
+			<div id="sidebar">
+				<div class="infobox">
+					<div class="label">pixels</div>
+					<div id="pixelcount" class="data">0</div>					
+				</div>
+				<div class="infobox">
+					<div class="label">fps</div>
+					<div id="fps" class="data">0</div>					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

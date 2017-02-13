@@ -1,0 +1,52 @@
+body {
+	background-color: #182020;
+	-webkit-touch-callout : none; /* iOS Safari */
+    -webkit-user-select   : none; /* Safari */
+    -khtml-user-select    : none; /* Konqueror HTML */
+    -moz-user-select      : none; /* Firefox */
+    -ms-user-select       : none; /* Internet Explorer/Edge */
+    user-select           : none; /* Non-prefixed version, currently
+                                     supported by Chrome and Opera */
+}
+
+#gamearea {
+	width: 100%;
+	display: inline-flex;
+}
+
+#pixelframe {
+	display: inline-block;
+	flex: 1;
+}
+
+#pixelcanvas {
+	width: 100%;
+	border: 1px #dddddd solid;
+}
+
+#sidebar {
+	display: inline-block;
+	width: 200px;
+	border: 1px #dddddd solid;
+}
+
+.infobox {
+	font-family: "Arial", Helvetica, sans-serif;
+	color: #dddddd;
+	text-align: center;
+	margin: 10px;
+	border: 1px #dddddd solid;
+}
+
+.infobox .label {
+	border-bottom: 1px #dddddd solid;
+}
+
+.building {
+    border: 1px solid #444444;
+    margin: 5px;
+    background-image: url("images/build.png");
+    background-position-x: 1px;
+    background-position-y: 1px;
+    background-repeat: no-repeat;
+}
