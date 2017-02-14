@@ -8,12 +8,14 @@ define(function () {
 	
 	entity.create = function (map, tile, type) {
 		var entity = new this.typeMap[type]();
-			entity.init(map, tile);
+			entity.map = map;
+			entity.tile = tile;
+			entity.init();
 		return entity;
 	};
 
 	entity.prototype = {	
-		draw : function(tile) {
+		draw : function() {
 			
 		},
 		

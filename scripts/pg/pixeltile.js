@@ -30,7 +30,7 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 		
 		update_entity: function (step_time){
 			if (this.entity != null) {
-				this.entity.update(this.map, this, step_time);
+				this.entity.update(step_time);
 			}		
 		},
 		
@@ -38,9 +38,14 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 			return this.entity = entity.create(this.map, this, type);
 		},
 		
+		destroy_entity: function () {
+			this.entity.destroy();
+			delete this.entity;
+		},
+		
 		draw: function () {
 			if (this.entity){
-				this.entity.draw(this);
+				this.entity.draw();
 			} else {			
 				var startX = (config.border_size - config.pixel_size) + (config.pixel_size * this.x);
 				var startY = (config.border_size - config.pixel_size) + (config.pixel_size * this.y);
