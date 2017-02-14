@@ -125,6 +125,15 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 			}			
 			
 			return buildings;
+		},
+		
+		on_action_click : function (event) {			
+			var buildings = this.get_available_buildings(),
+				action    = event.target.id;
+			
+			if (buildings.indexOf(action) != -1) {
+				this.map.create_entity_at(this.x, this.y, action);
+			}
 		}
 	};
 	

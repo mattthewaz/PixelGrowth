@@ -1,4 +1,4 @@
-define(["dom", "pg/gs", "pg/pixelmap", "pg/render", "pg/engine", "pg/entity/square"], function (dom, gs, pixelmap, render, engine, square) {
+define(["dom", "pg/gs", "pg/pixelmap", "pg/render", "pg/engine", "pg/entity/square", "pg/entity/amplifier"], function (dom, gs, pixelmap, render, engine, square, amplifier) {
 	
 	gs.map = new pixelmap(10);
 	

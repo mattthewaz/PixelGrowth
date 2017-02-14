@@ -51,6 +51,8 @@ define(["config"], function(config){
 			}		
 			
 			this.sidebar.appendChild(actions_panel);	
+			
+			actions_panel.addEventListener('click', tile.on_action_click.bind(tile));
 		}
 	};
 		
