@@ -17,7 +17,6 @@ define(["dom", "config", "pg/pixeltile"], function(dom, config, pixeltile) {
 				this.map[i][j] = new pixeltile(i, j, this);
 			}	
 		}
-	
 				
 		this.zoom_level = config.default_play_size;
 		
@@ -80,6 +79,17 @@ define(["dom", "config", "pg/pixeltile"], function(dom, config, pixeltile) {
 				entity = tile.create_entity(type);
 				this.entity_map[x] = this.entity_map[x] || {};
 				this.entity_map[x][y] = tile;
+			}
+		},
+		
+		remove_entity_at : function (x, y) {
+			var tile = this.get_tile_at(x,y),
+			    entity;
+			
+			if (tile && tile.entity) {
+				tile.destroy_entity();
+				this.entity_map[x] = this.entity_map[x] || {};
+				delete this.entity_map[x][y];
 			}
 		},
 		
