@@ -94,12 +94,14 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 			return nodes;
 		},
 		
+		//Returns a list of dom nodes that comprise the action menu.
 		get_actions_panel : function () {
 			var nodes = [],
 				buildings = this.get_available_buildings(),
 			    header = document.createElement('div'),
 				building,
-				buildingNode;
+				buildingNode,
+				deconstructNode;
 				
 			header.className = 'label';
 			header.innerHTML = 'actions';
@@ -115,6 +117,15 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 				buildingNode.id = building;		
 
 				nodes.push(buildingNode);
+			}
+			
+			if (this.entity && this.entity.can_deconstruct) {
+				deconstructNode = document.createElement('div');
+				deconstructNode.className = 'deconstruct';
+				deconstructNode.innerHTML = 'deconstruct';				
+				deconstructNode.id = 'deconstruct';		
+
+				nodes.push(deconstructNode);				
 			}
 			
 			return nodes;
@@ -139,6 +150,12 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 			if (buildings.indexOf(action) != -1) {
 				this.map.create_entity_at(this.x, this.y, action);
 			}
+			
+			if (action === 'deconstruct') {
+				this.map.remove_entity_at(this.x, this.y);
+			}
+			
+			dom.add_tile_details(this);
 		}
 	};
 	

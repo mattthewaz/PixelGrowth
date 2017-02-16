@@ -10,6 +10,8 @@ define(["pg/entity", "utils", "config", "dom", "pg/gs"], function (entity, utils
 	utils.extend(entity, square);
 	
 	Object.assign(square.prototype, {
+		can_deconstruct : false,
+		
 		init: function () {
 			this.project_power(2);
 		},

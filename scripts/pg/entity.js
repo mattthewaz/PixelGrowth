@@ -15,6 +15,8 @@ define(["pg/gs"], function (gs) {
 	};
 
 	entity.prototype = {	
+		can_deconstruct : true,
+	
 		draw : function() {
 			
 		},
