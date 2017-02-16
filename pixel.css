@@ -50,3 +50,12 @@ body {
     background-position-y: 1px;
     background-repeat: no-repeat;
 }
+
+.deconstruct {
+    border: 1px solid #444444;
+    margin: 5px;
+    background-image: url("images/deconstruct.png");
+    background-position-x: 1px;
+    background-position-y: 1px;
+    background-repeat: no-repeat;
+}
