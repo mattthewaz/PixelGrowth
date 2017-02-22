@@ -137,7 +137,14 @@ define(["dom", "config", "pg/entity"], function (dom, config, entity) {
 			if (this.entity) {
 				buildings = this.entity.get_available_buildings();
 			} else {
-				buildings.push('amplifier');
+				var neighbors = this.map.get_tile_area(this.x, this.y, 1);
+				for (var i = 0; i < neighbors.length; i++) {
+					var neighbor = neighbors[i];
+					if (neighbor && neighbor.entity && neighbor.entity.name === 'square') {						
+						buildings.push('amplifier');
+						break;
+					}
+				}
 			}			
 			
 			return buildings;
